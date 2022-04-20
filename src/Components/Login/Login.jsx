@@ -15,8 +15,11 @@ const Login = () => {
         </Link>
         {/* BUTTON */}
         <section>
-          <Link to="/join" className={classes.joinUs}>
+          <Link to="/join-us" className={classes.joinUs}>
             Join Us
+          </Link>
+          <Link to="/sign-in" className={classes.signIn}>
+            Sign in
           </Link>
         </section>
       </nav>
