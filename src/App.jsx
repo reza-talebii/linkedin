@@ -1,8 +1,16 @@
-import { useState } from "react";
-import "./App.css";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
+import { Login } from "./Components/";
 
 const App = () => {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Login />} />
+      </Routes>
+    </div>
+  );
 };
 
 export default App;
