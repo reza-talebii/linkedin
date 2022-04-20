@@ -1,4 +1,7 @@
 import React from "react";
+
+import { Link } from "react-router-dom";
+
 import logoImage from "../../images/login-logo.svg";
 import classes from "./Login.module.css";
 
@@ -6,9 +9,16 @@ const Login = () => {
   return (
     <section className={classes.container}>
       <nav className={classes.nav}>
-        <a href="/">
+        {/* LOGO */}
+        <Link to="/">
           <img src={logoImage} alt="logo" />
-        </a>
+        </Link>
+        {/* BUTTON */}
+        <section>
+          <Link to="/join" className={classes.joinUs}>
+            Join Us
+          </Link>
+        </section>
       </nav>
     </section>
   );

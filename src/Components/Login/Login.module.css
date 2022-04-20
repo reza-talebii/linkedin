@@ -17,6 +17,20 @@
   width: 135px;
 }
 
+.joinUs {
+  font-size: 1rem;
+  padding: 0.7rem 0.9rem;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
+  margin-right: 0.8rem;
+  border-radius: 4px;
+}
+
+.joinUs:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.9);
+}
+
 @media screen and (max-width: 768px) {
   .nav {
     padding: 0 0.3rem;
