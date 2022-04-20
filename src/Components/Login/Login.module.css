@@ -3,8 +3,8 @@
 }
 
 .nav {
-  max-width: 1120px;
   margin: auto;
+  max-width: 1120px;
   padding: 0.8rem 0 1rem;
   display: flex;
   align-items: center;
@@ -48,4 +48,40 @@
   .nav {
     padding: 0 0.3rem;
   }
+}
+
+.banner {
+  display: flex;
+  max-width: 1120px;
+  margin: auto;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.banner_text {
+  height: 100%;
+}
+
+.banner_text > h1 {
+  font-size: 3rem;
+  width: 600px;
+  font-weight: 300;
+  color: #0a66c2;
+  margin: 2rem 0 3rem;
+}
+
+.banner > section {
+  flex: 50%;
+}
+
+.googleBtn {
+  width: 60%;
+  background: #fff;
+  border: 1px solid #333;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
 }

@@ -3,6 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import logoImage from "../../images/login-logo.svg";
+import bannerImage from "../../images/login-hero.svg";
+import googleIcon from "../../images/google.svg";
+
 import classes from "./Login.module.css";
 
 const Login = () => {
@@ -23,6 +26,18 @@ const Login = () => {
           </Link>
         </section>
       </nav>
+      {/* BANNER CONTENT */}
+      <section className={classes.banner}>
+        <section className={classes.banner_text}>
+          <h1>Welcome To your perofessional community</h1>
+          <button className={classes.googleBtn}>
+            <img src={googleIcon} /> Sign in with Google
+          </button>
+        </section>
+        <section className={classes.banner_image}>
+          <img src={bannerImage} alt="banner" />
+        </section>
+      </section>
     </section>
   );
 };

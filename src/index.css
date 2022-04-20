@@ -46,3 +46,8 @@ body {
 a {
   text-decoration: none;
 }
+
+button,
+input {
+  font-family: inherit;
+}
