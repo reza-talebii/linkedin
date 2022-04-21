@@ -1,0 +1,13 @@
+export { default as userIcon } from "./user.svg";
+export { default as workIcon } from "./nav-work.svg";
+export { default as downIcon } from "./down-icon.svg";
+export { default as navHomeImg } from "./nav-home.svg";
+export { default as navNetworkImg } from "./nav-network.svg";
+export { default as navJobsImg } from "./nav-jobs.svg";
+export { default as navMessagingImg } from "./nav-messaging.svg";
+export { default as navNotificationImg } from "./nav-notifications.svg";
+export { default as logoImage } from "./login-logo.svg";
+export { default as bannerImage } from "./login-hero.svg";
+export { default as googleIcon } from "./google.svg";
+export { default as homeLogo } from "./home-logo.svg";
+export { default as searchImage } from "./search-icon.svg";

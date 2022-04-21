@@ -1,0 +1,136 @@
+.nav {
+  margin-left: auto;
+  display: block;
+}
+
+.nav__wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style-type: none;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.nav__list a {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1.5;
+  min-width: 80px;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav__list a > span {
+  color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.nav__list a > span:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.nav__list.active span::after {
+  content: "";
+  transform: scaleX(1);
+  border-bottom: 2px solid var(--white, #fff);
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  background: #000;
+  height: 2px;
+  width: 100%;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.user:hover .signOut {
+  display: flex;
+}
+
+.user > a > svg {
+  width: 24px;
+  border-radius: 50%;
+}
+
+.user > a > img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.user > a > span {
+  display: flex;
+  align-items: center;
+}
+
+.work {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.work > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.work > a > span > img {
+  width: 24px;
+  margin-top: 6px;
+}
+
+.signOut {
+  position: absolute;
+  top: 75px;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  color: #0a66c2;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  width: 100px;
+  height: 40px;
+  font-size: 1rem;
+  transition-duration: 167s;
+  text-align: center;
+  display: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    width: 100%;
+  }
+
+  .nav__list a {
+    min-width: 70px;
+  }
+  .nav__wrap {
+    justify-content: center;
+  }
+}

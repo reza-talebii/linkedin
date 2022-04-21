@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from "./Search.module.css";
 
-import searchImage from "../../../images/search-icon.svg";
+import { searchImage } from "../../../images";
 
 const Search = () => {
   return (
