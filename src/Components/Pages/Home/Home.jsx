@@ -5,6 +5,8 @@ import homeLogo from "../../../images/home-logo.svg";
 
 import classes from "./Home.module.css";
 
+import Search from "../../Ui/Inputs/Search";
+
 const Home = () => {
   return (
     <section className={classes.container}>
@@ -14,6 +16,7 @@ const Home = () => {
             <img src={homeLogo} alt="logo" />
           </Link>
         </span>
+        <Search />
       </section>
     </section>
   );
