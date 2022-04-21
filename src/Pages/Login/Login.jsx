@@ -2,9 +2,9 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import logoImage from "../../../images/login-logo.svg";
-import bannerImage from "../../../images/login-hero.svg";
-import googleIcon from "../../../images/google.svg";
+import logoImage from "../../images/login-logo.svg";
+import bannerImage from "../../images/login-hero.svg";
+import googleIcon from "../../images/google.svg";
 
 import classes from "./Login.module.css";
 
