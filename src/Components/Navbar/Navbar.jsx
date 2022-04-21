@@ -58,13 +58,15 @@ const Navbar = () => {
             <span>Me</span>
             <img src={downIcon} />
           </a>
+
+          <section className={classes.signOut}>SignOut</section>
         </section>
 
         <section className={classes.work}>
           <a>
             <img src={workIcon} />
             <span>
-              Work
+              <p>Work</p>
               <img src={downIcon} />
             </span>
           </a>
