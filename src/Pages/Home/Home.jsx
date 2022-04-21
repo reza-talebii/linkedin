@@ -2,6 +2,8 @@ import React from "react";
 
 import classes from "./Home.module.css";
 
+import { Posts, UserInfo, Tags } from "../../components";
+
 const Home = () => {
   return (
     <section className={classes.container}>
@@ -15,7 +17,11 @@ const Home = () => {
         </p>
       </section>
 
-      <div className={classes.layout}></div>
+      <div className={classes.layout}>
+        <UserInfo />
+        <Posts />
+        <Tags />
+      </div>
     </section>
   );
 };
