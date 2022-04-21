@@ -22,3 +22,20 @@
   border-color: #dce6f1;
   vertical-align: top;
 }
+
+.search-icon {
+  width: 22px;
+  position: absolute;
+  z-index: 1;
+  top: 6px;
+  left: 11px;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-icon > img {
+  width: 100%;
+  height: auto;
+}
