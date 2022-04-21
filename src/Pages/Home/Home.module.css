@@ -1,0 +1,35 @@
+.container {
+  margin-top: 5rem;
+  max-width: 100%;
+}
+
+.content {
+  min-height: 50px;
+  padding: 16px 0;
+  box-sizing: content-box;
+  text-align: center;
+  text-decoration: underline;
+  display: flex;
+  justify-content: center;
+}
+
+.content > h5 {
+  color: #0a66c2;
+}
+
+.content > a {
+  font-weight: 700;
+}
+
+.content > p {
+  font-size: 14px;
+  color: #436469;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    padding: 0 5px;
+  }
+}
