@@ -16,3 +16,8 @@
   min-height: 100%;
   max-width: 1128px;
 }
+
+.logo {
+  margin-right: 0.5rem;
+  font-size: 0;
+}
