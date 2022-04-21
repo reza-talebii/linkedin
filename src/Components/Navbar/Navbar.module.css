@@ -1,0 +1,14 @@
+.nav {
+  margin-left: auto;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    width: 100%;
+  }
+}

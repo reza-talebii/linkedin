@@ -6,7 +6,7 @@ import homeLogo from "../../images/home-logo.svg";
 
 import classes from "./Header.module.css";
 
-import { Search } from "../";
+import { Search, Navbar } from "../";
 
 const Header = () => {
   return (
@@ -18,6 +18,7 @@ const Header = () => {
           </Link>
         </span>
         <Search />
+        <Navbar />
       </section>
     </section>
   );
