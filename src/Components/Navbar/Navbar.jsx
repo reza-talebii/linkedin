@@ -2,11 +2,16 @@ import React from "react";
 
 import classes from "./Navbar.module.css";
 
-import navHomeImg from "../../images/nav-home.svg";
-import navNetworkImg from "../../images/nav-network.svg";
-import navJobsImg from "../../images/nav-jobs.svg";
-import navMessagingImg from "../../images/nav-messaging.svg";
-import navNotificationImg from "../../images/nav-notifications.svg";
+import {
+  userIcon,
+  workIcon,
+  downIcon,
+  navHomeImg,
+  navNetworkImg,
+  navJobsImg,
+  navMessagingImg,
+  navNotificationImg,
+} from "../../images";
 
 const Navbar = () => {
   return (
@@ -18,30 +23,52 @@ const Navbar = () => {
             <span>Home</span>
           </a>
         </li>
+
         <li className={classes.nav__list}>
           <a>
             <img src={navNetworkImg} />
             <span>Network</span>
           </a>
         </li>
+
         <li className={classes.nav__list}>
           <a>
             <img src={navJobsImg} />
             <span>Messaging</span>
           </a>
         </li>
+
         <li className={classes.nav__list}>
           <a>
             <img src={navNotificationImg} />
             <span>Notifications</span>
           </a>
         </li>
+
         <li className={classes.nav__list}>
           <a>
             <img src={navMessagingImg} />
             <span>Messaging</span>
           </a>
         </li>
+
+        <section className={classes.user}>
+          <a>
+            <img src={userIcon} />
+            <span>Me</span>
+            <img src={downIcon} />
+          </a>
+        </section>
+
+        <section className={classes.work}>
+          <a>
+            <img src={workIcon} />
+            <span>
+              Work
+              <img src={downIcon} />
+            </span>
+          </a>
+        </section>
       </ul>
     </nav>
   );

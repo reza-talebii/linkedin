@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import homeLogo from "../../images/home-logo.svg";
+import { homeLogo } from "../../images";
 
 import classes from "./Header.module.css";
 
