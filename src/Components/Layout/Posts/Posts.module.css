@@ -67,3 +67,30 @@
   border: none;
   outline: none;
 }
+
+.description {
+  padding: 0 16px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 15px;
+  text-align: left;
+  line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 15px 20px;
+}
+
+.sharedImg {
+  margin-top: 8px;
+  width: 100%;
+  height: 20vh;
+  display: block;
+  position: relative;
+  background-color: #f9fafb;
+}
+
+.sharedImg img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from "./Posts.module.css";
 
-import { userIcon, ellipsisIcon } from "../../../images";
+import { userIcon, ellipsisIcon, sharedImageIcon } from "../../../images";
 
 import SharePost from "./SharePost";
 
@@ -24,6 +24,12 @@ const Posts = () => {
           <button>
             <img src={ellipsisIcon} alt="" />
           </button>
+        </div>
+        <div className={classes.description}>description</div>
+        <div className={classes.sharedImg}>
+          <a>
+            <img src={sharedImageIcon} alt="" />
+          </a>
         </div>
       </section>
     </section>
