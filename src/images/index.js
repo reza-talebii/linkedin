@@ -14,3 +14,6 @@ export { default as searchImage } from "./search-icon.svg";
 export { default as widgetIcon } from "./widget-icon.svg";
 export { default as itemIcon } from "./item-icon.svg";
 export { default as plusIcon } from "./plus-icon.svg";
+export { default as feedIcon } from "./feed-icon.svg";
+export { default as rightIcon } from "./right-icon.svg";
+export { default as seeJobsIcon } from "./seejobs.jpg";
