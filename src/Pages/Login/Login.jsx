@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { logoImage, bannerImage, googleIcon } from "../../images";
 
@@ -8,9 +8,23 @@ import classes from "./Login.module.css";
 
 import { authActions } from "../../store/AuthSlice";
 import { useDispatch } from "react-redux";
+import { auth } from "../../firebase/server";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    const provider = new GoogleAuthProvider();
+
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        dispatch(authActions.signup({ user: JSON.stringify(result.user) }));
+        navigate("/home");
+      })
+      .catch((error) => console.log(error.message));
+  };
 
   return (
     <section className={classes.container}>
@@ -33,10 +47,7 @@ const Login = () => {
       <section className={classes.banner}>
         <section className={classes.banner_text}>
           <h1>Welcome To your perofessional community</h1>
-          <button
-            className={classes.googleBtn}
-            onClick={() => dispatch(authActions.signup())}
-          >
+          <button className={classes.googleBtn} onClick={handleLogin}>
             <img src={googleIcon} /> Sign in with Google
           </button>
         </section>

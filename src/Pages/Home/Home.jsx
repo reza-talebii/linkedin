@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import classes from "./Home.module.css";
 
 import { Posts, UserInfo, Tags } from "../../components";
 
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
+  const user = useSelector((state) => state.auth.user);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) navigate("/");
+  }, []);
+
   return (
     <section className={classes.container}>
       <section className={classes.content}>
