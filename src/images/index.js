@@ -11,3 +11,6 @@ export { default as bannerImage } from "./login-hero.svg";
 export { default as googleIcon } from "./google.svg";
 export { default as homeLogo } from "./home-logo.svg";
 export { default as searchImage } from "./search-icon.svg";
+export { default as widgetIcon } from "./widget-icon.svg";
+export { default as itemIcon } from "./item-icon.svg";
+export { default as plusIcon } from "./plus-icon.svg";
