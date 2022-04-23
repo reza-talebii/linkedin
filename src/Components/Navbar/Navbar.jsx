@@ -18,7 +18,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../firebase/server";
 import { signOut } from "firebase/auth";
-import { authActions } from "../../store/AuthSlice";
+import { authActions } from "../../store/Auth/AuthSlice";
 
 const Navbar = () => {
   const user = useSelector((state) => JSON.parse(state.auth.user));

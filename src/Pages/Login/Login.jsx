@@ -6,25 +6,14 @@ import { logoImage, bannerImage, googleIcon } from "../../images";
 
 import classes from "./Login.module.css";
 
-import { authActions } from "../../store/AuthSlice";
 import { useDispatch } from "react-redux";
-import { auth } from "../../firebase/server";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signup } from "../../store/Auth/AuthThunk";
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    const provider = new GoogleAuthProvider();
-
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        dispatch(authActions.signup({ user: JSON.stringify(result.user) }));
-        navigate("/home");
-      })
-      .catch((error) => console.log(error.message));
-  };
+  const handleLogin = () => dispatch(signup()).then(() => navigate("/home"));
 
   return (
     <section className={classes.container}>
