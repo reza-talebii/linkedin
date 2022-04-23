@@ -23,3 +23,6 @@ export { default as eventIcon } from "./event-icon.svg";
 export { default as writeArticleIcon } from "./article-icon.svg";
 export { default as ellipsisIcon } from "./ellipsis-horizontal-icon.svg";
 export { default as sharedImageIcon } from "./share.svg";
+export { default as likeIcon } from "./like.svg";
+export { default as commentIcon } from "./comment.svg";
+export { default as sendIcon } from "./send.svg";
