@@ -12,9 +12,7 @@ const UserInfo = () => {
           <section className={classes.cardBackground} />
           <a>
             <div className={classes.photo} />
-            <div className={classes.link}>
-              Wellcome, {props.user ? props.user.displayName : "There!"}
-            </div>
+            <div className={classes.link}>Welcome</div>
           </a>
 
           <a>

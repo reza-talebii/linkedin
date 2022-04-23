@@ -23,7 +23,7 @@
 }
 
 .cardBackground {
-  background: url("/images/card-bg.svg");
+  background: url("../../../images/card-bg.svg");
   background-position: center;
   background-size: 462px;
   height: 54px;
@@ -32,7 +32,7 @@
 
 .photo {
   box-shadow: none;
-  background-image: url("/images/photo.svg");
+  background-image: url("../../../images/photo.svg");
   width: 72px;
   height: 72px;
   box-sizing: border-box;
@@ -66,6 +66,33 @@
   padding-bottom: 12px;
 }
 
+.widget > a {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 12px;
+}
+
+.widget > a:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.widget > div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.widget > div span {
+  font-size: 12px;
+  line-height: 1.333;
+}
+
+.widget > svg {
+  color: rgba(0, 0, 0, 1);
+}
+
 .item {
   border-color: rgba(0, 0, 0, 0.8);
   text-align: left;
@@ -74,9 +101,38 @@
   display: block;
 }
 
+.item span {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 1);
+}
+
+.item span svg {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 .communityCard {
   padding: 8px 0 0;
   text-align: left;
   display: flex;
   flex-direction: column;
+}
+
+.communityCard a {
+  color: black;
+  padding: 4px 12px 4px 12px;
+  font-size: 12px;
+}
+
+.communityCard span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.communityCard:last-child {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  border-top: 1px solid #d6cec2;
+  padding: 12px;
 }
