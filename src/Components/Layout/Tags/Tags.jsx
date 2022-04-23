@@ -1,19 +1,22 @@
 import React from "react";
 
+import classes from "./Tags.module.scss";
+
 import { feedIcon, rightIcon, seeJobsIcon } from "../../../images";
 
 const Tags = () => {
   return (
-    <Container>
-      <FolowCard>
-        <Title>
+    <section className={classes.container}>
+      <section className={classes.flowCard}>
+        <div className={classes.title}>
           <h2>Add to your feed</h2>
           <img src={feedIcon} alt="feed-icon" />
-        </Title>
-        <FeedList>
+        </div>
+
+        <section className={classes.feedList}>
           <li>
             <a>
-              <Avatar />
+              <div className={classes.avatar} />
             </a>
             <div>
               <span>#Linkedin</span>
@@ -22,23 +25,25 @@ const Tags = () => {
           </li>
           <li>
             <a>
-              <Avatar />
+              <div className={classes.avatar} />
             </a>
             <div>
               <span>#Video</span>
               <button>follow</button>
             </div>
           </li>
-        </FeedList>
-        <Recommendation>
+        </section>
+
+        <a className={classes.Recommendation}>
           View all recommendations
           <img src={rightIcon} alt="right-icon" />
-        </Recommendation>
-      </FolowCard>
-      <BannerCard>
+        </a>
+      </section>
+
+      <section className={classes.bannerCard}>
         <img src={seeJobsIcon} alt="banner" />
-      </BannerCard>
-    </Container>
+      </section>
+    </section>
   );
 };
 
