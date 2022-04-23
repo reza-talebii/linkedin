@@ -11,6 +11,8 @@ const Home = () => {
   const user = useSelector((state) => state.auth.user);
   const navigate = useNavigate();
 
+  console.log(user);
+
   useEffect(() => {
     if (!user) navigate("/");
   }, []);

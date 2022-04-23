@@ -2,6 +2,8 @@ import React from "react";
 
 import classes from "./Navbar.module.css";
 
+import { useNavigate } from "react-router-dom";
+
 import {
   userIcon,
   workIcon,
@@ -13,7 +15,27 @@ import {
   navNotificationImg,
 } from "../../images";
 
+import { useDispatch } from "react-redux";
+import { auth } from "../../firebase/server";
+import { signOut } from "firebase/auth";
+import { authActions } from "../../store/AuthSlice";
+
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const signOutHandler = () => {
+    signOut(auth)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+
+    dispatch(authActions.signOut());
+  };
+
   return (
     <nav className={classes.nav}>
       <ul className={classes.nav__wrap}>
@@ -59,7 +81,9 @@ const Navbar = () => {
             <img src={downIcon} />
           </a>
 
-          <section className={classes.signOut}>SignOut</section>
+          <section className={classes.signOut} onClick={signOutHandler}>
+            SignOut
+          </section>
         </section>
 
         <section className={classes.work}>
