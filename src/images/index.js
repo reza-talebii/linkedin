@@ -21,3 +21,4 @@ export { default as photoIcon } from "./photo-icon.svg";
 export { default as videoIcon } from "./video-icon.svg";
 export { default as eventIcon } from "./event-icon.svg";
 export { default as writeArticleIcon } from "./article-icon.svg";
+export { default as ellipsisIcon } from "./ellipsis-horizontal-icon.svg";
