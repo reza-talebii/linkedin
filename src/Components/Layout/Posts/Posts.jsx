@@ -1,7 +1,11 @@
 import React from "react";
 
 const Posts = () => {
-  return <h1>post</h1>;
+  return (
+    <section className={classes.container}>
+      <section className={classes.shareBox}></section>
+    </section>
+  );
 };
 
 export default Posts;
