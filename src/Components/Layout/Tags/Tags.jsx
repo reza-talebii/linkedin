@@ -1,6 +1,6 @@
 import React from "react";
 
-import classes from "./Tags.module.scss";
+import classes from "./Tags.module.css";
 
 import { feedIcon, rightIcon, seeJobsIcon } from "../../../images";
 

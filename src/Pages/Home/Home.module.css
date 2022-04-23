@@ -35,7 +35,7 @@
   row-gap: 25px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
   .content {
     flex-direction: column;
     padding: 0 5px;
