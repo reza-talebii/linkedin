@@ -17,3 +17,7 @@ export { default as plusIcon } from "./plus-icon.svg";
 export { default as feedIcon } from "./feed-icon.svg";
 export { default as rightIcon } from "./right-icon.svg";
 export { default as seeJobsIcon } from "./seejobs.jpg";
+export { default as photoIcon } from "./photo-icon.svg";
+export { default as videoIcon } from "./video-icon.svg";
+export { default as eventIcon } from "./event-icon.svg";
+export { default as writeArticleIcon } from "./article-icon.svg";
