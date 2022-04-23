@@ -6,7 +6,12 @@ import { logoImage, bannerImage, googleIcon } from "../../images";
 
 import classes from "./Login.module.css";
 
+import { authActions } from "../../store/AuthSlice";
+import { useDispatch } from "react-redux";
+
 const Login = () => {
+  const dispatch = useDispatch();
+
   return (
     <section className={classes.container}>
       <nav className={classes.nav}>
@@ -28,7 +33,10 @@ const Login = () => {
       <section className={classes.banner}>
         <section className={classes.banner_text}>
           <h1>Welcome To your perofessional community</h1>
-          <button className={classes.googleBtn}>
+          <button
+            className={classes.googleBtn}
+            onClick={() => dispatch(authActions.signup())}
+          >
             <img src={googleIcon} /> Sign in with Google
           </button>
         </section>
