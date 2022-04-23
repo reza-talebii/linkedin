@@ -4,14 +4,12 @@ import classes from "./Home.module.css";
 
 import { Posts, UserInfo, Tags } from "../../components";
 
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-  const user = useSelector((state) => state.auth.user);
   const navigate = useNavigate();
-
-  console.log(user);
+  const user = useSelector((state) => state.auth.user);
 
   useEffect(() => {
     if (!user) navigate("/");

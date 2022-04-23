@@ -4,7 +4,11 @@ import classes from "./UserInfo.module.css";
 
 import { widgetIcon, itemIcon, plusIcon } from "../../../images";
 
+import { useSelector } from "react-redux";
+
 const UserInfo = () => {
+  const user = useSelector((state) => state.auth.user);
+
   return (
     <section className={classes.container}>
       <section className={classes.artCard}>
@@ -12,7 +16,10 @@ const UserInfo = () => {
           <section className={classes.cardBackground} />
           <a>
             <div className={classes.photo} />
-            <div className={classes.link}>Welcome</div>
+            <div className={classes.link}>
+              Welcome
+              {user ? user?.displayName : "there"}
+            </div>
           </a>
 
           <a>

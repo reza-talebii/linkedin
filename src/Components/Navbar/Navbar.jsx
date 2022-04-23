@@ -15,15 +15,17 @@ import {
   navNotificationImg,
 } from "../../images";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../firebase/server";
 import { signOut } from "firebase/auth";
 import { authActions } from "../../store/AuthSlice";
 
 const Navbar = () => {
+  const user = useSelector((state) => JSON.parse(state.auth.user));
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  //SIGN HANDLER
   const signOutHandler = () => {
     signOut(auth)
       .then(() => {
@@ -76,8 +78,8 @@ const Navbar = () => {
 
         <section className={classes.user}>
           <a>
-            <img src={userIcon} />
-            <span>Me</span>
+            <img src={user?.photoURL || userIcon} />
+            <span> Me </span>
             <img src={downIcon} />
           </a>
 

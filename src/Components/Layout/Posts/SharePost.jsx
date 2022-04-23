@@ -10,11 +10,15 @@ import {
   writeArticleIcon,
 } from "../../../images";
 
+import { useSelector } from "react-redux";
+
 const SharePost = () => {
+  const user = useSelector((state) => JSON.parse(state.auth.user));
+
   return (
     <section className={classes.shareBox}>
       <div>
-        <img src={userIcon} alt="user" />
+        <img src={user?.photoURL || userIcon} alt="user" />
         <button>Start a post</button>
       </div>
 
