@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import { auth } from "../../firebase/server";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 
 export const signup = createAsyncThunk(
   "auth/signup",
@@ -11,6 +11,18 @@ export const signup = createAsyncThunk(
     try {
       const result = await signInWithPopup(auth, provider);
       return JSON.stringify(result.user);
+    } catch (error) {
+      rejectWithValue(error);
+    }
+  }
+);
+
+export const signout = createAsyncThunk(
+  "auth/signout",
+  async (_, { rejectWithValue }) => {
+    try {
+      await signOut(auth);
+      return null;
     } catch (error) {
       rejectWithValue(error);
     }

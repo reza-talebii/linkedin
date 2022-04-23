@@ -16,27 +16,16 @@ import {
 } from "../../images";
 
 import { useDispatch, useSelector } from "react-redux";
-import { auth } from "../../firebase/server";
-import { signOut } from "firebase/auth";
-import { authActions } from "../../store/Auth/AuthSlice";
+
+import { signout } from "../../store/Auth/AuthThunk";
 
 const Navbar = () => {
   const user = useSelector((state) => JSON.parse(state.auth.user));
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  //SIGN HANDLER
-  const signOutHandler = () => {
-    signOut(auth)
-      .then(() => {
-        navigate("/");
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
-
-    dispatch(authActions.signOut());
-  };
+  //SIGN OUT HANDLER
+  const signOutHandler = () => dispatch(signout()).then(() => navigate("/"));
 
   return (
     <nav className={classes.nav}>
