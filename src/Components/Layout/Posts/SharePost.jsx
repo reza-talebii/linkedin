@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import classes from "./SharePost.module.css";
 
@@ -16,15 +16,19 @@ import { useSelector } from "react-redux";
 
 const SharePost = () => {
   const user = useSelector((state) => JSON.parse(state.auth.user));
+  const [showPostModal, setShowPostModal] = useState(false);
+
+  //CLOSE MODAL HANDLER
+  const closeModalHandler = () => setShowPostModal(false);
 
   return (
     <>
-      <PostModal />
+      {showPostModal && <PostModal closeModal={closeModalHandler} />}
 
       <section className={classes.shareBox}>
         <div>
           <img src={user?.photoURL || userIcon} alt="user" />
-          <button>Start a post</button>
+          <button onClick={() => setShowPostModal(true)}>Start a post</button>
         </div>
 
         <div>

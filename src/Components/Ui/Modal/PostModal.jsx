@@ -10,7 +10,7 @@ import {
   commentIcon,
 } from "../../../images";
 
-const PostModal = () => {
+const PostModal = ({ closeModal }) => {
   const [editorText, setEditorText] = React.useState("");
 
   return (
@@ -18,7 +18,7 @@ const PostModal = () => {
       <div className={classes.content}>
         <header className={classes.header}>
           <h2>Create a post</h2>
-          <button>
+          <button onClick={closeModal}>
             <img src={closeIcon} alt="close icon" />
           </button>
         </header>
@@ -32,9 +32,12 @@ const PostModal = () => {
           <div className={classes.editor}>
             <textarea
               value={editorText}
-              onChange={() => (e) => setEditorText(e.target.value)}
-              autoFocus="true"
-            ></textarea>
+              onChange={(e) => setEditorText(e.target.value)}
+              placeholder="What do you want to share?"
+              autoFocus={true}
+            >
+              {editorText}
+            </textarea>
           </div>
         </section>
 
@@ -54,7 +57,7 @@ const PostModal = () => {
               </button>
             </div>
 
-            <button className={classes.postButton}></button>
+            <button className={classes.postButton}>Post</button>
           </div>
         </section>
       </div>
