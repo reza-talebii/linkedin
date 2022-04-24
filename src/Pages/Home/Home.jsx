@@ -11,9 +11,9 @@ const Home = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.auth.user);
 
-  useEffect(() => {
-    if (!user) navigate("/");
-  }, []);
+  // useEffect(() => {
+  //   if (!user) navigate("/");
+  // }, []);
 
   return (
     <section className={classes.container}>

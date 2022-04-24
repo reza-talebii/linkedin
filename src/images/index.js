@@ -26,3 +26,4 @@ export { default as sharedImageIcon } from "./share.svg";
 export { default as likeIcon } from "./like.svg";
 export { default as commentIcon } from "./comment.svg";
 export { default as sendIcon } from "./send.svg";
+export { default as closeIcon } from "./close-icon.svg";

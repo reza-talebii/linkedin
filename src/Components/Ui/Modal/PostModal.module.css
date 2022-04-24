@@ -1,0 +1,144 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  color: #333;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+  max-width: 552px;
+  color: #fff;
+  background: #fff;
+  overflow: inherit;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 32px;
+  margin: 0 auto;
+}
+
+.header {
+  display: block;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header button {
+  height: 40px;
+  width: 40px;
+  min-width: auto;
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.header button img,
+svg {
+  pointer-events: none;
+}
+
+.sharedContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  vertical-align: baseline;
+  background: transparent;
+  padding: 8px 12px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+}
+
+.userInfo img,
+svg {
+  width: 48px;
+  height: 48px;
+  background-clip: content-box;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+
+.userInfo span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-left: 5px;
+}
+
+.shareCreation {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px 16px;
+}
+
+.attachAssets {
+  align-items: center;
+  display: flex;
+  padding-right: 8px;
+}
+
+.attachAssets button {
+  width: 40px;
+}
+
+.assetButton {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  min-width: auto;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.shareComment {
+  padding-left: 8px;
+  margin-right: auto;
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.shareComment button svg {
+  margin-right: 5px;
+}
+
+.postButton {
+  min-width: 60px;
+  border-radius: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background: "#0a66c2";
+  color: "white";
+}
+
+.editor {
+  padding: 12px 24px;
+}
+
+.editor textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: none;
+  direction: rtl;
+}
+
+.editor input {
+  width: 100%;
+  height: 35px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
