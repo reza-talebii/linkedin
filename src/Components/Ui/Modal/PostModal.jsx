@@ -8,7 +8,7 @@ import ReactPlayer from "react-player";
 import {
   closeIcon,
   userIcon,
-  sharedImageIcon,
+  photoIcon,
   videoIcon,
   commentIcon,
 } from "../../../images";
@@ -18,6 +18,7 @@ const PostModal = ({ closeModal }) => {
   const [editorText, setEditorText] = React.useState("");
   const [shareImage, setShareImage] = React.useState("");
   const [shareVideo, setShareVideo] = React.useState("");
+  const [assetArea, setAssetArea] = React.useState(false);
 
   //HANDLING UPLOADED IMAGE
   const handleImageUpload = (e) => {
@@ -28,7 +29,40 @@ const PostModal = ({ closeModal }) => {
   const closeModalHandler = () => {
     closeModal();
     setEditorText("");
+    setShareImage("");
+    setShareVideo("");
+    setAssetArea(false);
   };
+
+  //UPLOADER COMPONENTS
+  const imageUploaderComponent = (
+    <div className={classes.uploadImage}>
+      <input
+        type="file"
+        accept="image/gif,image/jpeg,image/png"
+        name="image"
+        id="file"
+        onChange={handleImageUpload}
+      />
+      <p>
+        <label htmlFor="file">Select an image to share</label>
+      </p>
+
+      {shareImage && <img src={URL.createObjectURL(shareImage)} alt="" />}
+    </div>
+  );
+
+  const videoUploaderComponent = (
+    <>
+      <input
+        type="text"
+        placeholder="please input a video link"
+        value={shareVideo}
+        onChange={(e) => setShareVideo(e.target.value)}
+      />
+      {shareVideo && <ReactPlayer width={"100%"} url={shareVideo} />}
+    </>
+  );
 
   return (
     <section className={classes.container}>
@@ -54,41 +88,27 @@ const PostModal = ({ closeModal }) => {
               autoFocus={true}
             />
 
-            <div className={classes.uploadImage}>
-              <input
-                type="file"
-                accept="image/gif,image/jpeg,image/png"
-                name="image"
-                id="file"
-                onChange={handleImageUpload}
-              />
-              <p>
-                <label htmlFor="file">Select an image to share</label>
-              </p>
-
-              {shareImage && (
-                <img src={URL.createObjectURL(shareImage)} alt="" />
-              )}
-
-              <input
-                type="text"
-                placeholder="please input a video link"
-                value={shareVideo}
-                onChange={(e) => setShareVideo(e.target.value)}
-              />
-
-              {shareVideo && <ReactPlayer width={"100%"} url={shareVideo} />}
-            </div>
+            {assetArea == "photo"
+              ? imageUploaderComponent
+              : assetArea == "video"
+              ? videoUploaderComponent
+              : null}
           </div>
         </section>
 
         <section className={classes.shareCreation}>
           <div className={classes.attachAssets}>
-            <button className={classes.assetButton}>
-              <img src={sharedImageIcon} alt="" />
+            <button
+              className={classes.assetButton}
+              onClick={() => setAssetArea("photo")}
+            >
+              <img src={photoIcon} alt="" />
             </button>
 
-            <button className={classes.assetButton}>
+            <button
+              className={classes.assetButton}
+              onClick={() => setAssetArea("video")}
+            >
               <img src={videoIcon} alt="" />
             </button>
 
