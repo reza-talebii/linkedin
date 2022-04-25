@@ -7,9 +7,11 @@ import { getAllPost } from "../../../store/Posts/PostsThunk";
 
 import { SharePost, Post } from "../../";
 
+import { spinner } from "../../../images/";
+
 const Posts = () => {
-  const user = useSelector((state) => state?.auth?.user);
-  const { posts } = useSelector((state) => state?.posts);
+  const user = useSelector((state) => JSON.parse(state.auth.user));
+  const { posts, loading } = useSelector((state) => state?.posts);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,6 +21,12 @@ const Posts = () => {
   return (
     <section className={classes.container}>
       <SharePost />
+
+      {loading && (
+        <section className={classes.spinner}>
+          <img src={spinner} alt="" />
+        </section>
+      )}
 
       {[...posts]?.reverse()?.map((post, i) => (
         <Post key={i} post={post} />

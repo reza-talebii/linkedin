@@ -1,3 +1,11 @@
 .container {
   grid-area: main;
 }
+
+.spinner {
+  text-align: center;
+}
+
+.spinner img {
+  width: 50px;
+}

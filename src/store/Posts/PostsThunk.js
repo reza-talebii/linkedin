@@ -15,7 +15,6 @@ export const getAllPost = createAsyncThunk(
         docs.push({ ...doc.data() });
       });
 
-      console.log("getAllPost", docs);
       return { posts: docs };
     } catch (e) {
       rejectWithValue(e.message);
@@ -84,7 +83,7 @@ export const createPost = createAsyncThunk(
 
       try {
         await addDoc(collection(db, "posts"), videoPost);
-
+        window.location.reload();
         return { post: videoPost };
       } catch (e) {
         rejectWithValue(e.message);
