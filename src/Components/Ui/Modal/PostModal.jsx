@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 
 import classes from "./PostModal.module.css";
 
+import ReactPlayer from "react-player";
+
 import {
   closeIcon,
   userIcon,
@@ -15,6 +17,7 @@ const PostModal = ({ closeModal }) => {
   const user = useSelector((state) => JSON.parse(state.auth.user));
   const [editorText, setEditorText] = React.useState("");
   const [shareImage, setShareImage] = React.useState("");
+  const [shareVideo, setShareVideo] = React.useState("");
 
   //HANDLING UPLOADED IMAGE
   const handleImageUpload = (e) => {
@@ -66,6 +69,15 @@ const PostModal = ({ closeModal }) => {
               {shareImage && (
                 <img src={URL.createObjectURL(shareImage)} alt="" />
               )}
+
+              <input
+                type="text"
+                placeholder="please input a video link"
+                value={shareVideo}
+                onChange={(e) => setShareVideo(e.target.value)}
+              />
+
+              {shareVideo && <ReactPlayer width={"100%"} url={shareVideo} />}
             </div>
           </div>
         </section>

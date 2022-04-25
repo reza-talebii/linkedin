@@ -148,6 +148,14 @@ svg {
   margin-bottom: 20px;
 }
 
-.uploadImage input{
+.uploadImage {
+  text-align: center;
+}
+
+.uploadImage img {
+  width: 100%;
+}
+
+.uploadImage input:first-child {
   display: none;
 }
