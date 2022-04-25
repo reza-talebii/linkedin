@@ -1,9 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import classes from "./PostModal.module.css";
 
 import ReactPlayer from "react-player";
+
+import { createPost } from "../../../store/SharePost/SharePostThunk";
 
 import {
   closeIcon,
@@ -14,7 +16,10 @@ import {
 } from "../../../images";
 
 const PostModal = ({ closeModal }) => {
+  const dispatch = useDispatch();
+
   const user = useSelector((state) => JSON.parse(state.auth.user));
+
   const [editorText, setEditorText] = React.useState("");
   const [shareImage, setShareImage] = React.useState("");
   const [shareVideo, setShareVideo] = React.useState("");
@@ -132,11 +137,7 @@ const PostModal = ({ closeModal }) => {
               </button>
             </div>
 
-            <button
-              className={classes.postButton}
-              disabled={!!editorText}
-              onClick={sharePost}
-            >
+            <button className={classes.postButton} onClick={sharePost}>
               Post
             </button>
           </div>
