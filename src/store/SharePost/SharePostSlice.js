@@ -3,14 +3,15 @@ import { createPost } from "./SharePostThunk";
 
 const SharePostSlice = createSlice({
   name: "SharePost",
-  initialState: { error: null, loading: false },
+  initialState: { error: null, loading: false, success: false },
   reducers: {},
   extraReducers: {
-    [createPost.pending]: (state, action) => {
+    [createPost.pending]: (state) => {
       state.loading = true;
     },
-    [createPost.fulfilled]: (state, action) => {
+    [createPost.fulfilled]: (state) => {
       state.loading = false;
+      state.success = true;
     },
     [createPost.rejected]: (state, action) => {
       state.loading = false;

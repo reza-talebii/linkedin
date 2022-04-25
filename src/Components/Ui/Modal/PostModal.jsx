@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Timestamp } from "firebase/firestore";
 
 import classes from "./PostModal.module.css";
 
@@ -48,7 +49,11 @@ const PostModal = ({ closeModal }) => {
   const sharePost = (event) => {
     event.preventDefault();
 
-    dispatch(createPost({ editorText, user, shareImage, shareVideo }));
+    const timestamp = Timestamp.now();
+
+    dispatch(
+      createPost({ editorText, user, shareImage, shareVideo, timestamp })
+    );
 
     resetStates();
   };
