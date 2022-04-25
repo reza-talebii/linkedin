@@ -4,7 +4,7 @@
 
 ## اسکرین شات
 
-![alt text](https://ibb.co/YWYxbWn)
+![alt text](https://i.ibb.co/0X8xQX4/Capture.png)
 
 
 
