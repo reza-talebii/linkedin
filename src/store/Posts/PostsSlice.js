@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createPost } from "./SharePostThunk";
+import { createPost } from "./PostsThunk";
 
-const SharePostSlice = createSlice({
+const PostsSlice = createSlice({
   name: "SharePost",
   initialState: { error: null, loading: false, success: false },
   reducers: {},
@@ -20,4 +20,4 @@ const SharePostSlice = createSlice({
   },
 });
 
-export const sharePostReducer = SharePostSlice.reducer;
+export const PostsReducer = PostsSlice.reducer;

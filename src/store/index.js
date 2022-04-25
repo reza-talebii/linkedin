@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import { authReducer } from "./Auth/AuthSlice";
-import { sharePostReducer } from "./SharePost/SharePostSlice";
+import { PostsReducer } from "./Posts/PostsSlice";
 
 const store = configureStore({
   reducer: {
     auth: authReducer,
-    sharePost: sharePostReducer,
+    posts: PostsReducer,
   },
 });
 

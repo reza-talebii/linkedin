@@ -6,7 +6,7 @@ import classes from "./PostModal.module.css";
 
 import ReactPlayer from "react-player";
 
-import { createPost } from "../../../store/SharePost/SharePostThunk";
+import { createPost } from "../../../store/Posts/PostsThunk";
 
 import {
   closeIcon,
