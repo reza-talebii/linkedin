@@ -20,6 +20,14 @@ const PostModal = ({ closeModal }) => {
   const [shareVideo, setShareVideo] = React.useState("");
   const [assetArea, setAssetArea] = React.useState(false);
 
+  //RESET STATES
+  const resetStates = () => {
+    setEditorText("");
+    setShareImage("");
+    setShareVideo("");
+    setAssetArea(false);
+  };
+
   //HANDLING UPLOADED IMAGE
   const handleImageUpload = (e) => {
     if (e.target.files[0]) setShareImage(e.target.files[0]);
@@ -28,10 +36,16 @@ const PostModal = ({ closeModal }) => {
   //HANDLING CLOSE MODAL
   const closeModalHandler = () => {
     closeModal();
-    setEditorText("");
-    setShareImage("");
-    setShareVideo("");
-    setAssetArea(false);
+    resetStates();
+  };
+
+  //SHARE POST
+  const sharePost = (event) => {
+    event.preventDefault();
+
+    dispatch(createPost({ editorText, user, shareImage, shareVideo }));
+
+    resetStates();
   };
 
   //UPLOADER COMPONENTS
@@ -118,7 +132,11 @@ const PostModal = ({ closeModal }) => {
               </button>
             </div>
 
-            <button className={classes.postButton} disabled={!!editorText}>
+            <button
+              className={classes.postButton}
+              disabled={!!editorText}
+              onClick={sharePost}
+            >
               Post
             </button>
           </div>
