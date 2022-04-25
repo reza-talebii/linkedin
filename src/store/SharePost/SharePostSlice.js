@@ -8,7 +8,6 @@ const SharePostSlice = createSlice({
   extraReducers: {
     [createPost.pending]: (state, action) => {
       state.loading = true;
-      console.log("pending", action.payload);
     },
     [createPost.fulfilled]: (state, action) => {
       state.loading = false;
