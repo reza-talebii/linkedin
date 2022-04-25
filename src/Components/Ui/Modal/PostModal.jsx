@@ -14,7 +14,14 @@ import {
 const PostModal = ({ closeModal }) => {
   const user = useSelector((state) => JSON.parse(state.auth.user));
   const [editorText, setEditorText] = React.useState("");
+  const [shareImage, setShareImage] = React.useState("");
 
+  //HANDLING UPLOADED IMAGE
+  const handleImageUpload = (e) => {
+    if (e.target.files[0]) setShareImage(e.target.files[0]);
+  };
+
+  //HANDLING CLOSE MODAL
   const closeModalHandler = () => {
     closeModal();
     setEditorText("");
@@ -42,9 +49,24 @@ const PostModal = ({ closeModal }) => {
               onChange={(e) => setEditorText(e.target.value)}
               placeholder="What do you want to share?"
               autoFocus={true}
-            >
-              {editorText}
-            </textarea>
+            />
+
+            <div className={classes.uploadImage}>
+              <input
+                type="file"
+                accept="image/gif,image/jpeg,image/png"
+                name="image"
+                id="file"
+                onChange={handleImageUpload}
+              />
+              <p>
+                <label htmlFor="file">Select an image to share</label>
+              </p>
+
+              {shareImage && (
+                <img src={URL.createObjectURL(shareImage)} alt="" />
+              )}
+            </div>
           </div>
         </section>
 
