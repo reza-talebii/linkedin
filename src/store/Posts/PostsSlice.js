@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createPost } from "./PostsThunk";
+import { createPost, getAllPost } from "./PostsThunk";
 
 const PostsSlice = createSlice({
   name: "SharePost",
   initialState: { error: null, loading: false, success: false },
   reducers: {},
   extraReducers: {
+    //SAVA POST
     [createPost.pending]: (state) => {
       state.loading = true;
     },
@@ -14,6 +15,18 @@ const PostsSlice = createSlice({
       state.success = true;
     },
     [createPost.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    //GET ALL POST
+    [getAllPost.pending]: (state) => {
+      state.loading = true;
+    },
+    [getAllPost.fulfilled]: (state, action) => {
+      state.loading = false;
+      console.log(action.payload);
+    },
+    [getAllPost.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload;
     },
