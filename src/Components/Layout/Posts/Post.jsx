@@ -1,4 +1,5 @@
 import React from "react";
+import ReactPlayer from "react-player";
 
 import {
   userIcon,
@@ -9,15 +10,26 @@ import {
   sendIcon,
 } from "../../../images";
 
+import classes from "./Post.module.css";
+
 const Post = ({ post }) => {
+  const {
+    post: { comments, description, image, video, like },
+  } = post;
+
+  //ACTOR POST
+  const {
+    actor: { profileImage, description: email, title },
+  } = post;
+
   return (
     <section className={classes.article}>
       <div className={classes.shareActor}>
         <a>
-          <img src={userIcon} alt="avatar" />
+          <img src={profileImage || userIcon} alt="avatar" />
           <div>
-            <span>Title</span>
-            <span>Info</span>
+            <span>{title}</span>
+            <span>{email}</span>
             <span>Date</span>
           </div>
         </a>
@@ -26,11 +38,15 @@ const Post = ({ post }) => {
         </button>
       </div>
 
-      <div className={classes.description}>description</div>
+      <div className={classes.description}>{description}</div>
 
       <div className={classes.sharedImg}>
         <a>
-          <img src={sharedImageIcon} alt="" />
+          {image ? (
+            <img src={image} alt="shared image" />
+          ) : (
+            <ReactPlayer url={video} width={"100%"} height={"100%"} />
+          )}
         </a>
       </div>
 

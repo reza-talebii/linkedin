@@ -10,6 +10,7 @@ export const signup = createAsyncThunk(
 
     try {
       const result = await signInWithPopup(auth, provider);
+      localStorage.setItem("user", JSON.stringify(result.user));
       return JSON.stringify(result.user);
     } catch (error) {
       rejectWithValue(error);

@@ -7,3 +7,5 @@ export { default as Navbar } from "./Navbar/Navbar";
 export { default as Posts } from "./Layout/Posts/Posts";
 export { default as Tags } from "./Layout/Tags/Tags";
 export { default as UserInfo } from "./Layout/UserInfo/UserInfo";
+export { default as SharePost } from "./Layout/Posts/SharePost";
+export { default as Post } from "./Layout/Posts/Post";

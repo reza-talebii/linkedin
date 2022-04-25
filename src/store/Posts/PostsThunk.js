@@ -4,6 +4,25 @@ import { storage, db } from "../../firebase/server";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 
+export const getAllPost = createAsyncThunk(
+  "posts/getAllPost",
+  async (_, { rejectWithValue }) => {
+    try {
+      const posts = await getDocs(collection(db, "posts"));
+      let docs = [];
+
+      posts.forEach((doc) => {
+        docs.push({ ...doc.data() });
+      });
+
+      console.log("getAllPost", docs);
+      return { posts: docs };
+    } catch (e) {
+      rejectWithValue(e.message);
+    }
+  }
+);
+
 export const createPost = createAsyncThunk(
   "posts/createPost",
   async (post, { rejectWithValue }) => {
@@ -20,22 +39,25 @@ export const createPost = createAsyncThunk(
         },
         async () => {
           const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+          const newPost = {
+            actor: {
+              description: post.user.email,
+              title: post.user.displayName,
+              date: JSON.stringify(post.timestamp),
+              profileImage: post.user.photoURL,
+            },
+            post: {
+              video: post.shareVideo ? post.shareVideo : null,
+              image: downloadURL,
+              comments: {},
+              like: {},
+              description: post.editorText,
+            },
+          };
           try {
-            await addDoc(collection(db, "posts"), {
-              actor: {
-                description: post.user.email,
-                title: post.user.displayName,
-                date: JSON.stringify(post.timestamp),
-                profileImage: post.user.photoURL,
-              },
-              post: {
-                video: post.shareVideo ? post.shareVideo : null,
-                image: downloadURL,
-                comments: {},
-                like: {},
-                description: post.editorText,
-              },
-            });
+            await addDoc(collection(db, "posts"), newPost);
+
+            window.location.reload();
           } catch (e) {
             rejectWithValue(e.message);
           }
@@ -44,43 +66,29 @@ export const createPost = createAsyncThunk(
     }
     //UPLOAD VIDEO
     else {
+      const videoPost = {
+        actor: {
+          description: post.user.email,
+          title: post.user.displayName,
+          date: JSON.stringify(post.timestamp),
+          profileImage: post.user.photoURL,
+        },
+        post: {
+          video: post.shareVideo,
+          image: null,
+          comments: {},
+          like: {},
+          description: post.editorText,
+        },
+      };
+
       try {
-        await addDoc(collection(db, "posts"), {
-          actor: {
-            description: post.user.email,
-            title: post.user.displayName,
-            date: JSON.stringify(post.timestamp),
-            profileImage: post.user.photoURL,
-          },
-          post: {
-            video: post.shareVideo,
-            image: null,
-            comments: {},
-            like: {},
-            description: post.editorText,
-          },
-        });
+        await addDoc(collection(db, "posts"), videoPost);
+
+        return { post: videoPost };
       } catch (e) {
         rejectWithValue(e.message);
       }
-    }
-  }
-);
-
-export const getAllPost = createAsyncThunk(
-  "posts/getAllPost",
-  async (_, { rejectWithValue }) => {
-    try {
-      const posts = await getDocs(collection(db, "posts"));
-      let docs = [];
-
-      posts.forEach((doc) => {
-        docs.push({ ...doc.data() });
-      });
-
-      return { posts: docs };
-    } catch (e) {
-      rejectWithValue(e.message);
     }
   }
 );

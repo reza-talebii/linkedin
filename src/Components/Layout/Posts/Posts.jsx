@@ -9,7 +9,7 @@ import { SharePost, Post } from "../../";
 
 const Posts = () => {
   const user = useSelector((state) => state?.auth?.user);
-  const posts = useSelector((state) => state?.posts?.posts);
+  const { posts } = useSelector((state) => state?.posts);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Posts = () => {
     <section className={classes.container}>
       <SharePost />
 
-      {posts?.map((post, i) => (
+      {[...posts]?.reverse()?.map((post, i) => (
         <Post key={i} post={post} />
       ))}
     </section>

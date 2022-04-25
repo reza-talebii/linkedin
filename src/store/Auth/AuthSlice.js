@@ -4,7 +4,11 @@ import { signup, signout } from "./AuthThunk";
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: { user: null, loadingAuth: false, errorAuth: null },
+  initialState: {
+    user: localStorage.getItem("user"),
+    loadingAuth: false,
+    errorAuth: null,
+  },
   reducers: {},
   extraReducers: {
     //SIGN UP

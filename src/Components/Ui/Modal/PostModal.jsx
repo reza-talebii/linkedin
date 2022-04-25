@@ -55,7 +55,7 @@ const PostModal = ({ closeModal }) => {
       createPost({ editorText, user, shareImage, shareVideo, timestamp })
     );
 
-    resetStates();
+    closeModalHandler();
   };
 
   //UPLOADER COMPONENTS

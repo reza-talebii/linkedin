@@ -10,7 +10,7 @@ const PostsSlice = createSlice({
     [createPost.pending]: (state) => {
       state.loading = true;
     },
-    [createPost.fulfilled]: (state) => {
+    [createPost.fulfilled]: (state, action) => {
       state.loading = false;
       state.success = true;
     },
