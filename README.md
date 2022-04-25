@@ -1,6 +1,6 @@
 # شبیه سازی لینکدین
-> یک پروژه فول استک شبیه سازی لینکدین توسعه داده با react , redux toolkit , firebase
-> دمو سایت [_here_](https://linkdin-rt.netlify.app/).
+> یک پروژه فول استک و ریسپانسیو شبیه سازی لینکدین توسعه داده با react , redux toolkit , firebase
+> دمو سایت [_اینجا_](https://linkdin-rt.netlify.app/).
 
 ## اسکرین شات
 
@@ -10,11 +10,9 @@
 
 ## اطلاعات کلی
 
--  
 - مدیریت sate ها با استفاده از redux toolkit
 - بک اند با استفاده از firebase
-- ریسپانسیو
-- اسیتایل با css module
+- استایل با css module
 - احزار هویت با firebase  
 
 
@@ -30,7 +28,7 @@
 ## چالش ها
 
 
-- اپلود فایل با استفاده از firebase/storage
+- اپلود فایل با firebase/storage
 - استفاده از firestore برای ذخیره داده ها
 - مدیریت states با react tolkit و در خواست های async
 - احزار هویت
