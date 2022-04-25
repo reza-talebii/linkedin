@@ -77,15 +77,7 @@ const Navbar = () => {
           </section>
         </section>
 
-        <section className={classes.work}>
-          <a>
-            <img src={workIcon} />
-            <span>
-              <p>Work</p>
-              <img src={downIcon} />
-            </span>
-          </a>
-        </section>
+        
       </ul>
     </nav>
   );

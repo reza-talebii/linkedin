@@ -133,4 +133,15 @@
   .nav__wrap {
     justify-content: center;
   }
+
+  .signOut {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 3rem;
+  }
+
+  .user img:last-child {
+    display: none;
+  }
 }

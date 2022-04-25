@@ -23,6 +23,7 @@ export const signout = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       await signOut(auth);
+      localStorage.removeItem("user");
       return null;
     } catch (error) {
       rejectWithValue(error);
