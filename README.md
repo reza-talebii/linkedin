@@ -1,17 +1,17 @@
 # شبیه سازی لینکدین
-> Outline a brief description of your project.
-> Live demo [_here_](https://linkdin-rt.netlify.app/). <!-- If you have the project hosted somewhere, include the link here. -->
+> یک پروژه فول استک شبیه سازی لینکدین توسعه داده با react , redux toolkit , firebase
+> دمو سایت [_here_](https://linkdin-rt.netlify.app/).
 
 ## اسکرین شات
 
-![Example screenshot](https://ibb.co/YWYxbWn)
+![alt text](https://ibb.co/YWYxbWn)
 
 
 
 ## اطلاعات کلی
 
-- یک پروژه فول استک شبیه سازی لینکدین 
-- مدیریت sate ها با استفاده از redux tolkit
+-  
+- مدیریت sate ها با استفاده از redux toolkit
 - بک اند با استفاده از firebase
 - ریسپانسیو
 - اسیتایل با css module
@@ -22,7 +22,7 @@
 ## تکنولوژی های استفاده شده
 
 - react - ورژن 18.0
-- redux tolkit- ورژن 1.8
+- redux toolkit- ورژن 1.8
 - firebase - ورژن 9.6
 - react-router-dom  6.3 ورژن
 
