@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 const Home = () => {
   const navigate = useNavigate();
-  const user = useSelector((state) => state.auth.user);
+  const user = useSelector((state) => JSON.parse(state.auth.user));
 
   useEffect(() => {
     if (!user) navigate("/");
