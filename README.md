@@ -1,40 +1,38 @@
-# Linedin
-
+# شبیه سازی لینکدین
 > Outline a brief description of your project.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+> Live demo [_here_](https://linkdin-rt.netlify.app/). <!-- If you have the project hosted somewhere, include the link here. -->
 
-## Screenshots
+## اسکرین شات
 
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](https://ibb.co/YWYxbWn)
 
-<!-- If you have screenshots you'd like to share, include them here. -->
 
-## General Information
 
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+## اطلاعات کلی
 
-## Technologies Used
+- یک پروژه فول استک شبیه سازی لینکدین 
+- مدیریت sate ها با استفاده از redux tolkit
+- بک اند با استفاده از firebase
+- ریسپانسیو
+- اسیتایل با css module
+- احزار هویت با firebase  
 
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
 
-## Features
 
-List the ready features here:
+## تکنولوژی های استفاده شده
 
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+- react - ورژن 18.0
+- redux tolkit- ورژن 1.8
+- firebase - ورژن 9.6
+- react-router-dom  6.3 ورژن
 
-## Screenshots
 
-![Example screenshot](./img/screenshot.png)
+## چالش ها
 
-# <!-- If you have screenshots you'd like to share, include them here. -->
 
-> > > > > > > 24ccab1b6e2630966fc92566dcbe81091547b17c
+- اپلود فایل با استفاده از firebase/storage
+- استفاده از firestore برای ذخیره داده ها
+- مدیریت states با react tolkit و در خواست های async
+- احزار هویت
+
+
