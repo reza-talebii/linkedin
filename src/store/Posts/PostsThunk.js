@@ -2,10 +2,10 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import { storage, db } from "../../firebase/server";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 export const createPost = createAsyncThunk(
-  "sharePost/createPost",
+  "posts/createPost",
   async (post, { rejectWithValue }) => {
     //UPLOAD IMAGE
     if (post.shareImage) {
@@ -63,6 +63,18 @@ export const createPost = createAsyncThunk(
       } catch (e) {
         rejectWithValue(e.message);
       }
+    }
+  }
+);
+
+export const getAllPost = createAsyncThunk(
+  "posts/getAllPost",
+  async (_, { rejectWithValue }) => {
+    try {
+      const posts = await getDocs(collection(db, "posts"));
+      return { posts };
+    } catch (e) {
+      rejectWithValue(e.message);
     }
   }
 );
