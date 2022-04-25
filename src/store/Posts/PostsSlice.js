@@ -3,7 +3,7 @@ import { createPost, getAllPost } from "./PostsThunk";
 
 const PostsSlice = createSlice({
   name: "SharePost",
-  initialState: { error: null, loading: false, success: false },
+  initialState: { posts: [], error: null, loading: false, success: false },
   reducers: {},
   extraReducers: {
     //SAVA POST
@@ -24,7 +24,7 @@ const PostsSlice = createSlice({
     },
     [getAllPost.fulfilled]: (state, action) => {
       state.loading = false;
-      console.log(action.payload);
+      state.posts = action.payload.posts;
     },
     [getAllPost.rejected]: (state, action) => {
       state.loading = false;

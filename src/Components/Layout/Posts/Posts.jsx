@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 import classes from "./Posts.module.css";
+
+import { getAllPost } from "../../../store/Posts/PostsThunk";
 
 import {
   userIcon,
@@ -14,6 +17,12 @@ import {
 import SharePost from "./SharePost";
 
 const Posts = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllPost());
+  }, [dispatch]);
+
   return (
     <section className={classes.container}>
       <SharePost />

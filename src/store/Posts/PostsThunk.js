@@ -72,7 +72,13 @@ export const getAllPost = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const posts = await getDocs(collection(db, "posts"));
-      return { posts };
+      let docs = [];
+
+      posts.forEach((doc) => {
+        docs.push({ ...doc.data() });
+      });
+
+      return { posts: docs };
     } catch (e) {
       rejectWithValue(e.message);
     }
