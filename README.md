@@ -1,40 +1,43 @@
-# Linedin
+# شبیه سازی لینکدین
+> یک پروژه فول استک و ریسپانسیو شبیه سازی لینکدین توسعه داده با react , redux toolkit , firebase
+> دمو سایت [_اینجا_](https://linkdin-rt.netlify.app/).
 
-> Outline a brief description of your project.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+## اسکرین شات
 
-## Screenshots
+![alt text](https://i.ibb.co/0X8xQX4/Capture.png)
 
-![Example screenshot](./img/screenshot.png)
 
-<!-- If you have screenshots you'd like to share, include them here. -->
 
-## General Information
+## اطلاعات کلی
 
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+- مدیریت sate ها با استفاده از redux toolkit
+- بک اند با استفاده از firebase
+- استایل با css module
+- احزار هویت با firebase  
 
-## Technologies Used
 
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
 
-## Features
+## تکنولوژی های استفاده شده
 
-List the ready features here:
+- react - ورژن 18.0
+- redux toolkit- ورژن 1.8
+- firebase - ورژن 9.6
+- react-router-dom  6.3 ورژن
 
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
 
-## Screenshots
 
-![Example screenshot](./img/screenshot.png)
+## ویژگی ها 
+- لاگین با گوگل و ایمیل
+-اشتراک تصاویر و ویدیو
+-الایک و کامنت
+## چالش ها
 
-# <!-- If you have screenshots you'd like to share, include them here. -->
 
-> > > > > > > 24ccab1b6e2630966fc92566dcbe81091547b17c
+- اپلود فایل با firebase/storage
+- استفاده از firestore برای ذخیره داده ها
+- مدیریت states با react tolkit و در خواست های async
+- احزار هویت
+
+
+## وضیعیت پروژه
+در حال توسعه
