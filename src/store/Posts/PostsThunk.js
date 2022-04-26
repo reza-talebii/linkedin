@@ -55,8 +55,7 @@ export const createPost = createAsyncThunk(
           };
           try {
             await addDoc(collection(db, "posts"), newPost);
-
-            window.location.reload();
+            // return { posts: newPost };
           } catch (e) {
             rejectWithValue(e.message);
           }
@@ -83,8 +82,14 @@ export const createPost = createAsyncThunk(
 
       try {
         await addDoc(collection(db, "posts"), videoPost);
-        window.location.reload();
-        return { post: videoPost };
+        const posts = await getDocs(collection(db, "posts"));
+        let docs = [];
+
+        posts.forEach((doc) => {
+          docs.push({ ...doc.data() });
+        });
+
+        return { posts: docs };
       } catch (e) {
         rejectWithValue(e.message);
       }
