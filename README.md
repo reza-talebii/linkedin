@@ -1,4 +1,4 @@
-https://wcs.mehraman.com/swagger/index.html
+
 
 # شبیه سازی لینکدین
 > یک پروژه فول استک و ریسپانسیو شبیه سازی لینکدین توسعه داده با react , redux toolkit , firebase
